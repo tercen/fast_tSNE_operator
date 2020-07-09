@@ -1,34 +1,35 @@
-# Introduction
+# Fast t-SNE operator
 
-This is a template repository.
+##### Description
 
-Use this template repository during the first step of developing a tercen operator (in R) on github.
+The `Fast t-SNE` operator performs the Fast Fourier Transform Interpolation-based t-SNE dimensionality reduction method.
 
-An overview of steps for developing an operator are:
+##### Usage
 
-1. create a github repo
-2. install tercen_studio
-3. login to tercen_studio
-4. git clone the newly created repo
-5. start developing in R in tercen_studio
-6. add R packages to the repo
-7. push to the github repo
-8. go to tercen and install the operator
+Input projection|.
+---|---
+`row`   | represents the variables (e.g. genes, channels, markers)
+`col`   | represents the observations (e.g. cells, samples, individuals) 
+`y-axis`| measurement value
 
-For step 1, when creating the repo on github, you will notice the option to use a template repository, choose the `templateR_operator` repository and select it as the template repository.
+Input parameters|.
+---|---
+`dims`   | logical, output dimensionality, default 2
+`initial_dims`   | numeric, the number of dimensions that should be retained in the initial PCA step, default 50
 
-After creation, you now have a new repository with all the convenient files for making a new operator (in R) for tercen.
+Output relations|.
+---|---
+`tsne1, tsne2`| first two components containing the new projected values
 
-Use `tercen_studio` to clone the new repository and start programming in `tercen_studio`
+##### Details
 
-it includes the skeleton files 
+The operator performs tSNE analysis. It reduces the amount of variables (i.e. indicated by rows) to a lower number (default 2).
 
-* `main.R`
-* `workspace.R`
-* `operator.json`
-* `README_template.md`
-* `doc` directory
+#### Reference
 
-please remember to change the `README_template.md` to  `README.template.md`
+[FFT-accelerated Interpolation-based t-SNE](https://github.com/KlugerLab/FIt-SNE)
 
-inside the `doc` there is a `dev_commands.md` file which contains useful development command lines.
+##### See Also
+
+[tsne](https://github.com/tercen/tsne_operator)
+[pca](https://github.com/tercen/pca_operator)
