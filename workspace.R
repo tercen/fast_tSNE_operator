@@ -1,39 +1,20 @@
 library(tercen)
 library(dplyr)
-
-options("tercen.workflowId" = "wwww")
-options("tercen.stepId"     = "dddd")
-
-getOption("tercen.workflowId")
-getOption("tercen.stepId")
-
-(ctx = tercenCtx())  %>% 
-  select(.y, .ci, .ri) %>% 
-  group_by(.ci, .ri) %>%
-  summarise(median = median(.y)) %>%
-  ctx$addNamespace() %>%
-  ctx$save()
-
-
-# Note: the chdir=T argument to source() is necessary if running FIt-SNE outside of the the root directory of FIt-SNE
+library(irlba)
+library(rsvd)
 
 source('./fast_tsne.R', chdir=T)
 
-# Using Iris dataset
+options("tercen.workflowId" = "7eee20aa9d6cc4eb9d7f2cc2430313b6")
+options("tercen.stepId"     = "7a090727-a2bd-4237-875f-0ec28ddbd418")
 
-iris_unique <- unique(iris) # Remove duplicates
-X <- as.matrix(iris_unique[,1:4]) # Run TSNE
+ctx <- tercenCtx()
+tsne <- t(ctx$as.matrix())  %>% 
+  fftRtsne()
 
-Y_fft <- fftRtsne(X);
-plot(Y_fft,col=iris_unique$Species) # Plot the result
-
-
-# And now using a toy dataset and d=1
-
-require(MASS);
-N <- 1E4;
-d <- 3;
-input_data <- rbind(mvrnorm(n = N/2, rep(0, d), diag(d)),
-                    mvrnorm(n = N/2, rep(100, d), diag(d)))
-Y2 <- fftRtsne(input_data, 1, max_iter = 400, start_late_exag_iter=300, late_exag_coeff=10);
-plot(Y2[,1],runif(length(Y2)),col=c(rep(1,N/2), rep(2,N/2))) # Plot the result
+colnames(tsne) <- c("tsne1", "tsne2")
+tsne %>%
+  as_tibble() %>%
+  mutate(.ci = seq_len(nrow(.)) - 1) %>%
+  ctx$addNamespace() %>%
+  ctx$save()

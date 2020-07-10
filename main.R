@@ -1,9 +1,17 @@
 library(tercen)
 library(dplyr)
+library(irlba)
+library(rsvd)
 
-(ctx = tercenCtx())  %>% 
-  select(.y, .ci, .ri) %>% 
-  group_by(.ci, .ri) %>%
-  summarise(median = median(.y)) %>%
+source('./fast_tsne.R', chdir=T)
+
+ctx <- tercenCtx()
+tsne <- t(ctx$as.matrix())  %>% 
+  fftRtsne()
+
+colnames(tsne) <- c("tsne1", "tsne2")
+tsne %>%
+  as_tibble() %>%
+  mutate(.ci = seq_len(nrow(.)) - 1) %>%
   ctx$addNamespace() %>%
   ctx$save()
