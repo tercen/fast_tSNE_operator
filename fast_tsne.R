@@ -3,7 +3,7 @@
 library('irlba')
 library('rsvd')
 
-FAST_TSNE_SCRIPT_DIR <<- getwd() 
+FAST_TSNE_SCRIPT_DIR <<- "./"
 
 message("FIt-SNE R wrapper loading.")
 message("FIt-SNE root directory was set to ",  FAST_TSNE_SCRIPT_DIR)
