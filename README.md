@@ -12,10 +12,6 @@ Input projection|.
 `col`   | represents the observations (e.g. cells, samples, individuals) 
 `y-axis`| measurement value
 
-Input parameters|.
----|---
-`dims`   | logical, output dimensionality, default 2
-`initial_dims`   | numeric, the number of dimensions that should be retained in the initial PCA step, default 50
 
 Output relations|.
 ---|---
