@@ -25,7 +25,7 @@ Output relations|.
 
 The operator performs tSNE analysis. It reduces the amount of variables (i.e. indicated by rows) to a lower number (default 2).
 
-#### Reference
+##### Reference
 
 [FFT-accelerated Interpolation-based t-SNE](https://github.com/KlugerLab/FIt-SNE)
 
@@ -33,3 +33,4 @@ The operator performs tSNE analysis. It reduces the amount of variables (i.e. in
 
 [tsne](https://github.com/tercen/tsne_operator)
 [pca](https://github.com/tercen/pca_operator)
+
