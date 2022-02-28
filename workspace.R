@@ -15,6 +15,6 @@ tsne <- t(ctx$as.matrix())  %>%
 colnames(tsne) <- c("tsne1", "tsne2")
 tsne %>%
   as_tibble() %>%
-  mutate(.ci = seq_len(nrow(.)) - 1) %>%
+  mutate(.ci = as.integer(seq_len(nrow(.)) - 1)) %>%
   ctx$addNamespace() %>%
   ctx$save()
