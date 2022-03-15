@@ -6,6 +6,12 @@ library(rsvd)
 source('./fast_tsne.R', chdir=T)
 
 ctx <- tercenCtx()
+
+seed <- NULL
+if(!ctx$op.value('seed') < 0) seed <- as.integer(ctx$op.value('seed'))
+
+set.seed(seed)
+
 tsne <- t(ctx$as.matrix())  %>% 
   fftRtsne()
 
