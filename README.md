@@ -17,16 +17,14 @@ Output relations|.
 ---|---
 `tsne1, tsne2`| first two components containing the new projected values
 
-##### Details
-
-The operator performs tSNE analysis. It reduces the amount of variables (i.e. indicated by rows) to a lower number (default 2).
 
 ##### Reference
 
-[FFT-accelerated Interpolation-based t-SNE](https://github.com/KlugerLab/FIt-SNE)
+This operator is a wrapper of the `fftRtsne()` R function from the [FFT-accelerated Interpolation-based t-SNE repository](https://github.com/KlugerLab/FIt-SNE).
 
 ##### See Also
 
 [tsne](https://github.com/tercen/tsne_operator)
+
 [pca](https://github.com/tercen/pca_operator)
 

@@ -1,7 +1,9 @@
-library(tercen)
-library(dplyr)
-library(irlba)
-library(rsvd)
+suppressPackageStartupMessages({
+  library(tercen)
+  library(dplyr)
+  library(irlba)
+  library(rsvd)
+})
 
 source('./fast_tsne.R', chdir=T)
 
