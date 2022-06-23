@@ -11,9 +11,10 @@ seed <- NULL
 if(!ctx$op.value('seed') < 0) seed <- as.integer(ctx$op.value('seed'))
 
 set.seed(seed)
-
-tsne <- t(ctx$as.matrix())  %>% 
-  fftRtsne()
+suppressMessages({
+  tsne <- t(ctx$as.matrix())  %>% 
+    fftRtsne()
+})
 
 colnames(tsne) <- c("tsne1", "tsne2")
 tsne %>%
