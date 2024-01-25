@@ -1,17 +1,22 @@
 {
   "name": "FI-t-SNE",
   "description": "FFT-accelerated Interpolation-based t-SNE: an alternative method of t-SNE for constructing a low dimensional embedding of high-dimensional data.",
-  "tags": ["dimensionality reduction"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/fast_tSNE_operator"],
-  "properties": [ 
+  "tags": [
+    "dimensionality reduction",
+    "omics"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/fast_tSNE_operator"
+  ],
+  "properties": [
     {
-    "kind": "DoubleProperty",
-    "name": "seed",
-    "defaultValue": -1,
-    "description": "Seed for random number generation. if less than 0, set a Random seed"
-  }
+      "kind": "DoubleProperty",
+      "name": "seed",
+      "defaultValue": -1,
+      "description": "Seed for random number generation. if less than 0, set a Random seed"
+    }
   ]
 }
-
-
