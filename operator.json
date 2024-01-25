@@ -1,6 +1,6 @@
 {
-  "name": "FI-t-SNE",
-  "description": "FFT-accelerated Interpolation-based t-SNE: an alternative method of t-SNE for constructing a low dimensional embedding of high-dimensional data.",
+  "name": "Fast t-SNE",
+  "description": "Runs an FFT-accelerated Interpolation-based t-SNE, an approximate and faster t-SNE method for constructing dimensionality reduction.",
   "tags": [
     "dimensionality reduction",
     "omics"
