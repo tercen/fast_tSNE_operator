@@ -1,0 +1,19 @@
+{
+  "features": [
+    {
+      "coefficient": 1.0,
+      "exponent": 0.9062237839578154,
+      "kind": "Feature",
+      "name": "n_cols"
+    },
+    {
+      "coefficient": 1.0,
+      "exponent": 0.432170235695855,
+      "kind": "Feature",
+      "name": "n_rows"
+    }
+  ],
+  "intercept": 0.0004117019449474445,
+  "kind": "OperatorEstimateModel",
+  "offset": 6.8381577
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "ResourceModelSchema",
+  "design": "corners_center",
+  "memory_features": ["observation", "variable", "observation_||_variable"],
+  "runtime_features": ["observation", "variable", "observation_||_variable"],
+  "sweep": {
+    "observation": {"min": 200, "max": 1000000},
+    "variable":    {"min": 10,  "max": 60}
+  }
+}
